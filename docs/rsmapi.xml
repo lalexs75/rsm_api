@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="fpcRSMApi"><module name="RSMApi"><element name="TCustomRSMApi.GetStores"><short>Получение доступных складов</short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>
