@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions><package name="fpcRSMApi"><module name="RSMApi"><element name="TCustomRSMApi.GetStores"><short>Получение доступных складов</short>
+      </element><element name="TCustomRSMApi.RefreshToken"><short>Получение новых токенов по refresh_token</short>
+      </element>
+    <element name="TCustomRSMApi.GetOrders"><short>Получение заказов</short><descr>В query-параметрах запроса можно указать datetimeFrom  — дату, начиная с которой нужно получить заказы, <br/>
+skip  — количество заказов, которые нужно пропустить (по умолчанию — 0) <br/>
+limit — ограничение на количество заказов (по умолчанию — 100) <br/>
+skip и limit можно использовать для постраничной навигации, т. к. за раз сервер может вернуть не более 100 заказов.
+ Все query-параметры не обязательны, если их не указывать то будут возвращены последние 100 заказов.
+</descr>
+      </element><element name="TCustomRSMApi.GetRemains"><short>Получение текущих остатков</short>
+      </element><element name="TCustomRSMApi.GetOrders.ADatetimeFrom"><short>дату, начиная с которой нужно получить заказы</short>
+      </element><element name="TCustomRSMApi.GetOrders.ASkip"><short>количество заказов, которые нужно пропустить (по умолчанию — 0)</short>
+      </element><element name="TCustomRSMApi.GetOrders.ALimit"><short>ограничение на количество заказов (по умолчанию — 100)</short>
       </element>
     </module>
   </package>
