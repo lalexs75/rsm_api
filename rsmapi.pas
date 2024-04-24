@@ -76,14 +76,14 @@ type
     destructor Destroy; override;
     procedure Clear;
     function DoLogin:Boolean;
-    procedure RefreshToken;
+    function RefreshToken:Boolean;
 
     function SetRemains:TJSONData;
-    function GetRemains:TJSONData;
+    function GetRemains(AStoreId:string; APage:Integer = 1):TJSONData;
     function GetStores:TJSONData;
-    function GetOrders:TJSONData;
+    function GetOrders(ADatetimeFrom:TDateTime; ASkip:Integer = 0; ALimit:Integer = 100):TJSONData;
     function SetOrders:TJSONData;
-    function GetOrdersOutgoing:TJSONData;
+    function GetOrdersOutgoing(ADatetimeFrom:TDateTime; ASkip:Integer = 0; ALimit:Integer = 100):TJSONData;
     function GetBills:TJSONData;
     function SetBills:TJSONData;
     function GetSpecifications:TJSONData;
@@ -99,6 +99,8 @@ type
   end;
 
   TRSMApi = class(TCustomRSMApi)
+  public
+    property AuthorizationToken;
   published
     property Server;
     property Login;
@@ -106,8 +108,72 @@ type
     property OnHttpStatus;
   end;
 
+procedure AddURLParam(var S:string; AParam, AValue:string); overload;
+procedure AddURLParam(var S: string; AParam:string; AValue: Integer); inline; overload;
+procedure AddURLParam(var S:string; AParam:string); overload;
+
 implementation
 uses rxlogging, jsonparser, jsonscanner;
+
+function HTTPEncode(const AStr: String): String;
+const
+  HTTPAllowed = ['A'..'Z','a'..'z', '*','@','.','_','-', '0'..'9', '$','!','''','(',')'];
+var
+  SS,S,R: PChar;
+  H : String[2];
+  L : Integer;
+begin
+  L:=Length(AStr);
+  SetLength(Result,L*3); // Worst case scenario
+  if (L=0) then
+    exit;
+  R:=PChar(Result);
+  S:=PChar(AStr);
+  SS:=S; // Avoid #0 limit !!
+  while ((S-SS)<L) do
+  begin
+    if S^ in HTTPAllowed then
+      R^:=S^
+    else
+    if (S^=' ') then
+      R^:='+'
+    else
+    begin
+      R^:='%';
+      H:=HexStr(Ord(S^),2);
+      Inc(R);
+      R^:=H[1];
+      Inc(R);
+      R^:=H[2];
+    end;
+    Inc(R);
+    Inc(S);
+  end;
+  SetLength(Result,R-PChar(Result));
+end;
+
+procedure AddURLParam(var S: string; AParam, AValue: string);
+begin
+  if S<>'' then S:=S + '&';
+  if AValue <>'' then
+  begin
+    //AValue:=StringReplace(AValue, '#', '%23', [rfReplaceAll]);
+    AValue:=StringReplace(AValue, '%', '%25', [rfReplaceAll]);
+    S:=S + AParam + '=' + HTTPEncode(AValue)
+  end
+  else
+    S:=S + AParam
+end;
+
+procedure AddURLParam(var S: string; AParam:string; AValue: Integer); inline;
+begin
+  AddURLParam(S, AParam, IntToStr(AValue));
+end;
+
+procedure AddURLParam(var S: string; AParam: string); inline;
+begin
+  AddURLParam(S, AParam, '');
+end;
 
 { TCustomRSMApi }
 
@@ -187,7 +253,6 @@ function TCustomRSMApi.DoLogin: Boolean;
 var
   B: TJSONParser;
   FDATA, FUID, S: TJSONStringType;
-  R: Int64;
   M: TStringStream;
   J: TJSONObject;
   J1: TJSONData;
@@ -208,12 +273,18 @@ begin
     SaveHttpData('api_token_get');
     if FResultCode = 200 then
     begin
-      R:=FDocument.Size;
       FDocument.Position:=0;
       B:=TJSONParser.Create(FDocument, DefaultOptions);
       J1:=B.Parse;
-      FAuthorizationToken:=J1.GetPath('access_token').AsString;
-      FRefreshToken:=J1.GetPath('refresh_token').AsString;
+
+      if Assigned(J1.FindPath('error')) then
+        FResultString:=J1.GetPath('Error').AsString
+      else
+      begin
+        FAuthorizationToken:=J1.GetPath('access_token').AsString;
+        FRefreshToken:=J1.GetPath('refresh_token').AsString;
+        Result:=true;
+      end;
       J1.Free;
       B.Free;
     end;
@@ -221,9 +292,30 @@ begin
   M.Free;
 end;
 
-procedure TCustomRSMApi.RefreshToken;
+function TCustomRSMApi.RefreshToken: Boolean;
+var
+  B: TJSONParser;
+  J1: TJSONData;
 begin
+  Result:=false;
+  if SendCommand(hmPOST, 'api/token/refresh/', '', nil, [200, 400, 404], '') then
+  begin
+    FDocument.Position:=0;
+    B:=TJSONParser.Create(FDocument, DefaultOptions);
+    J1:=B.Parse;
 
+    if Assigned(J1.FindPath('error')) then
+      FResultString:=J1.GetPath('error').AsString
+    else
+    begin
+      FAuthorizationToken:=J1.GetPath('access_token').AsString;
+      FRefreshToken:=J1.GetPath('refresh_token').AsString;
+      Result:=true;
+    end;
+    J1.Free;
+    B.Free;
+  end;
+  SaveHttpData('api_token_refresh');
 end;
 
 function TCustomRSMApi.SetRemains: TJSONData;
@@ -231,15 +323,31 @@ begin
   Result:=nil;
 end;
 
-function TCustomRSMApi.GetRemains: TJSONData;
+function TCustomRSMApi.GetRemains(AStoreId: string; APage: Integer): TJSONData;
+var
+  S: String;
+  P: TJSONParser;
 begin
+  DoLogin;
   Result:=nil;
+  S:='';
+  AddURLParam(S, 'store_id', AStoreId);
+  AddURLParam(S, 'page', APage);
+  if SendCommand(hmGET, 'api/remains/', S, nil, [200, 400, 404], 'application/json') then
+  begin
+    FDocument.Position:=0;
+    P:=TJSONParser.Create(FDocument, DefaultOptions);
+    Result:=P.Parse as TJSONData;
+    P.Free;
+  end;
+  SaveHttpData('api_remains');
 end;
 
 function TCustomRSMApi.GetStores: TJSONData;
 var
   P: TJSONParser;
 begin
+  DoLogin;
   Result:=nil;
   if SendCommand(hmGET, 'api/remains/stores/', '', nil, [200, 400, 404], 'application/json') then
   begin
@@ -251,9 +359,33 @@ begin
   SaveHttpData('api_remains_stores');
 end;
 
-function TCustomRSMApi.GetOrders: TJSONData;
+function TCustomRSMApi.GetOrders(ADatetimeFrom: TDateTime; ASkip:Integer; ALimit:Integer): TJSONData;
+var
+  S: String;
+  P: TJSONParser;
 begin
+  DoLogin;
   Result:=nil;
+  S:='';
+  AddURLParam(S, 'datetimeFrom', FormatDateTime('YYYY-MM-DD''T''HH:NN:SS''Z''', ADatetimeFrom));
+  //datetimeFrom (в формате 2023-06-01T09:12:33) — дату, начиная с которой нужно получить заказы,
+  //skip (целое число) — количество заказов, которые нужно пропустить (по умолчанию — 0),
+  if ASkip<>0 then;
+    AddURLParam(S, 'skip', IntToStr(ASkip));
+  //limit (целое число) — ограничение на количество заказов (по умолчанию — 100),
+  if (ALimit>0) and (ALimit<>100) then;
+    AddURLParam(S, 'limit', IntToStr(ALimit));
+  //skip и limit можно использовать для постраничной навигации, т. к. за раз сервер может вернуть не более 100 заказов.
+  // Все query-параметры не обязательны, если их не указывать то будут возвращены последние 100 заказов.
+
+  if SendCommand(hmGET, 'api/orders/', S, nil, [200, 400, 404], 'application/json') then
+  begin
+    FDocument.Position:=0;
+    P:=TJSONParser.Create(FDocument, DefaultOptions);
+    Result:=P.Parse as TJSONData;
+    P.Free;
+  end;
+  SaveHttpData('api_orders');
 end;
 
 function TCustomRSMApi.SetOrders: TJSONData;
@@ -261,9 +393,34 @@ begin
   Result:=nil;
 end;
 
-function TCustomRSMApi.GetOrdersOutgoing: TJSONData;
+function TCustomRSMApi.GetOrdersOutgoing(ADatetimeFrom: TDateTime;
+  ASkip: Integer; ALimit: Integer): TJSONData;
+var
+  S: String;
+  P: TJSONParser;
 begin
+  DoLogin;
   Result:=nil;
+  S:='';
+  AddURLParam(S, 'datetimeFrom', FormatDateTime('YYYY-MM-DD''T''HH:NN:SS''Z''', ADatetimeFrom));
+  //datetimeFrom (в формате 2023-06-01T09:12:33) — дату, начиная с которой нужно получить заказы,
+  //skip (целое число) — количество заказов, которые нужно пропустить (по умолчанию — 0),
+  if ASkip<>0 then;
+    AddURLParam(S, 'skip', IntToStr(ASkip));
+  //limit (целое число) — ограничение на количество заказов (по умолчанию — 100),
+  if (ALimit>0) and (ALimit<>100) then;
+    AddURLParam(S, 'limit', IntToStr(ALimit));
+  //skip и limit можно использовать для постраничной навигации, т. к. за раз сервер может вернуть не более 100 заказов.
+  // Все query-параметры не обязательны, если их не указывать то будут возвращены последние 100 заказов.
+
+  if SendCommand(hmGET, 'api/orders/outgoing/', S, nil, [200, 400, 404], 'application/json') then
+  begin
+    FDocument.Position:=0;
+    P:=TJSONParser.Create(FDocument, DefaultOptions);
+    Result:=P.Parse as TJSONData;
+    P.Free;
+  end;
+  SaveHttpData('api_orders_outgoing');
 end;
 
 function TCustomRSMApi.GetBills: TJSONData;
