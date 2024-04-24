@@ -1,0 +1,118 @@
+object RSMAPIMainForm: TRSMAPIMainForm
+  Left = 529
+  Height = 686
+  Top = 182
+  Width = 959
+  Caption = 'RSM API demo'
+  ClientHeight = 686
+  ClientWidth = 959
+  LCLVersion = '3.99.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object Memo1: TMemo
+    Left = 0
+    Height = 113
+    Top = 573
+    Width = 959
+    Align = alBottom
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 0
+  end
+  object TreeView1: TTreeView
+    Left = 0
+    Height = 495
+    Top = 78
+    Width = 121
+    Align = alLeft
+    TabOrder = 1
+    OnClick = TreeView1Click
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 78
+    Top = 0
+    Width = 959
+    Align = alTop
+    AutoSize = True
+    ClientHeight = 78
+    ClientWidth = 959
+    TabOrder = 2
+    object Button1: TButton
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = edtUserPassword
+      AnchorSideBottom.Side = asrBottom
+      Left = 906
+      Height = 29
+      Top = 42
+      Width = 46
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 6
+      Caption = 'Login'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Label1: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideBottom.Control = edtUserLogin
+      AnchorSideBottom.Side = asrBottom
+      Left = 7
+      Height = 17
+      Top = 19
+      Width = 34
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Left = 6
+      Caption = 'Login'
+    end
+    object edtUserLogin: TEdit
+      AnchorSideLeft.Control = Label2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Button1
+      Left = 71
+      Height = 29
+      Top = 7
+      Width = 829
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Around = 6
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideBottom.Control = edtUserPassword
+      AnchorSideBottom.Side = asrBottom
+      Left = 7
+      Height = 17
+      Top = 54
+      Width = 58
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Left = 6
+      Caption = 'Password'
+    end
+    object edtUserPassword: TEdit
+      AnchorSideLeft.Control = Label2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edtUserLogin
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Button1
+      Left = 71
+      Height = 29
+      Top = 42
+      Width = 829
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Around = 6
+      TabOrder = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 121
+    Height = 495
+    Top = 78
+    Width = 838
+    Align = alClient
+    TabOrder = 3
+  end
+end

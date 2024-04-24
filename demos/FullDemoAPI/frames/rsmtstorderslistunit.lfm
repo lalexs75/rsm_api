@@ -1,0 +1,924 @@
+inherited rsmtstOrdersListFrame: TrsmtstOrdersListFrame
+  Height = 294
+  Width = 737
+  ClientHeight = 294
+  ClientWidth = 737
+  DesignLeft = 521
+  object Panel1: TPanel[0]
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 737
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 737
+    TabOrder = 0
+    object Button1: TButton
+      AnchorSideTop.Control = Panel1
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      Left = 461
+      Height = 29
+      Top = 11
+      Width = 74
+      Anchors = [akTop]
+      AutoSize = True
+      BorderSpacing.Around = 6
+      Caption = 'Orders list'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 17
+      Top = 23
+      Width = 39
+      Caption = 'Label1'
+    end
+    object RxDateEdit1: TRxDateEdit
+      Left = 48
+      Height = 29
+      Top = 9
+      Width = 103
+      ButtonWidth = 23
+      MaxLength = 10
+      PasswordChar = #0
+      PopupColor = clWindow
+      TabOrder = 1
+      Text = 't1.  .    '
+    end
+    object Button2: TButton
+      Tag = 1
+      AnchorSideTop.Control = Panel1
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      Left = 601
+      Height = 29
+      Top = 11
+      Width = 104
+      Anchors = [akTop]
+      AutoSize = True
+      BorderSpacing.Around = 6
+      Caption = 'Order dilers list'
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+  end
+  object RxDBGrid1: TRxDBGrid[1]
+    Left = 0
+    Height = 244
+    Top = 50
+    Width = 532
+    ColumnDefValues.BlobText = '(данные)'
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'id'
+        Width = 60
+        FieldName = 'id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'type'
+        Width = 50
+        FieldName = 'type'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'is_order'
+        Width = 60
+        FieldName = 'is_order'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'is_bid'
+        Width = 60
+        FieldName = 'is_bid'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'is_paid'
+        Width = 60
+        FieldName = 'is_paid'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'client_inn'
+        Width = 120
+        FieldName = 'client_inn'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'delivery_type'
+        Width = 90
+        FieldName = 'delivery_type'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'delivery_address'
+        Width = 120
+        FieldName = 'delivery_address'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'service_text'
+        Width = 120
+        FieldName = 'service_text'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'status'
+        Width = 60
+        FieldName = 'status'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'total_price'
+        Width = 90
+        FieldName = 'total_price'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'bill_requested'
+        Width = 60
+        FieldName = 'bill_requested'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'specification_requested'
+        Width = 60
+        FieldName = 'specification_requested'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    FooterOptions.DrawFullLine = False
+    SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+    SearchOptions.FromStart = False
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Align = alClient
+    Color = clWindow
+    DrawFullLine = False
+    SelectedColor = clHighlight
+    DataSource = dsOrdersList
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+    TitleStyle = tsNative
+  end
+  object RxDBGrid2: TRxDBGrid[2]
+    Left = 537
+    Height = 244
+    Top = 50
+    Width = 200
+    ColumnDefValues.BlobText = '(данные)'
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'rsm_id'
+        Width = 70
+        FieldName = 'rsm_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'quantity'
+        Width = 90
+        FieldName = 'quantity'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'quantity_from_home'
+        Width = 90
+        FieldName = 'quantity_from_home'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'quantity_from_other_dealer'
+        Width = 90
+        FieldName = 'quantity_from_other_dealer'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'target_dealer'
+        Width = 120
+        FieldName = 'target_dealer'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'price'
+        Width = 90
+        FieldName = 'price'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'total_price'
+        Width = 90
+        FieldName = 'total_price'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'status'
+        Width = 60
+        FieldName = 'status'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Пусто)'
+        Filter.NotEmptyValue = '(Не пусто)'
+        Filter.AllValue = '(Все значения)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    FooterOptions.DrawFullLine = False
+    SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+    SearchOptions.FromStart = False
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Align = alRight
+    Color = clWindow
+    DrawFullLine = False
+    SelectedColor = clHighlight
+    DataSource = dsItems
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+  end
+  object Splitter1: TSplitter[3]
+    Left = 532
+    Height = 244
+    Top = 50
+    Width = 5
+    Align = alRight
+    ResizeAnchor = akRight
+  end
+  object rxOrdersList: TRxMemoryData[4]
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'type'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'is_order'
+        DataType = ftBoolean
+      end    
+      item
+        Name = 'is_bid'
+        DataType = ftBoolean
+      end    
+      item
+        Name = 'is_paid'
+        DataType = ftBoolean
+      end    
+      item
+        Name = 'client_inn'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'delivery_type'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'delivery_address'
+        DataType = ftString
+        Size = 4000
+      end    
+      item
+        Name = 'service_text'
+        DataType = ftString
+        Size = 4000
+      end    
+      item
+        Name = 'status'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'total_price'
+        DataType = ftFloat
+      end    
+      item
+        Name = 'bill_requested'
+        DataType = ftBoolean
+      end    
+      item
+        Name = 'specification_requested'
+        DataType = ftBoolean
+      end    
+      item
+        Name = 'dealer_inn_from'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'dealer_inn'
+        DataType = ftString
+        Size = 100
+      end>
+    AfterScroll = rxOrdersListAfterScroll
+    PacketRecords = 0
+    Left = 102
+    Top = 128
+    object rxOrdersListid: TStringField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxOrdersListtype: TStringField
+      FieldKind = fkData
+      FieldName = 'type'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxOrdersListis_order: TBooleanField
+      FieldKind = fkData
+      FieldName = 'is_order'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object rxOrdersListis_bid: TBooleanField
+      FieldKind = fkData
+      FieldName = 'is_bid'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object rxOrdersListis_paid: TBooleanField
+      FieldKind = fkData
+      FieldName = 'is_paid'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object rxOrdersListclient_inn: TStringField
+      FieldKind = fkData
+      FieldName = 'client_inn'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxOrdersListdelivery_type: TStringField
+      FieldKind = fkData
+      FieldName = 'delivery_type'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxOrdersListdelivery_address: TStringField
+      FieldKind = fkData
+      FieldName = 'delivery_address'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object rxOrdersListservice_text: TStringField
+      FieldKind = fkData
+      FieldName = 'service_text'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object rxOrdersListstatus: TStringField
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxOrdersListtotal_price: TFloatField
+      FieldKind = fkData
+      FieldName = 'total_price'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      Precision = 2
+    end
+    object rxOrdersListbill_requested: TBooleanField
+      FieldKind = fkData
+      FieldName = 'bill_requested'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object rxOrdersListspecification_requested: TBooleanField
+      FieldKind = fkData
+      FieldName = 'specification_requested'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object rxOrdersListdealer_inn_from: TStringField
+      FieldKind = fkData
+      FieldName = 'dealer_inn_from'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxOrdersListdealer_inn: TStringField
+      FieldKind = fkData
+      FieldName = 'dealer_inn'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object dsOrdersList: TDataSource[5]
+    DataSet = rxOrdersList
+    Left = 64
+    Top = 128
+  end
+  object rxItems: TRxMemoryData[6]
+    FieldDefs = <    
+      item
+        Name = 'DOC_ID'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'rsm_id'
+        DataType = ftString
+        Size = 100
+      end    
+      item
+        Name = 'quantity'
+        DataType = ftFloat
+      end    
+      item
+        Name = 'quantity_from_home'
+        DataType = ftFloat
+      end    
+      item
+        Name = 'quantity_from_other_dealer'
+        DataType = ftFloat
+      end    
+      item
+        Name = 'target_dealer'
+        DataType = ftString
+        Size = 1000
+      end    
+      item
+        Name = 'price'
+        DataType = ftFloat
+      end    
+      item
+        Name = 'total_price'
+        DataType = ftFloat
+      end    
+      item
+        Name = 'status'
+        DataType = ftString
+        Size = 100
+      end>
+    OnFilterRecord = rxItemsFilterRecord
+    PacketRecords = 0
+    Left = 416
+    Top = 128
+    object rxItemsDOC_ID: TStringField
+      FieldKind = fkData
+      FieldName = 'DOC_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxItemsrsm_id: TStringField
+      FieldKind = fkData
+      FieldName = 'rsm_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object rxItemsquantity: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantity'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.000'
+      Precision = 2
+    end
+    object rxItemsquantity_from_home: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantity_from_home'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.000'
+      Precision = 2
+    end
+    object rxItemsquantity_from_other_dealer: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantity_from_other_dealer'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.000'
+      Precision = 2
+    end
+    object rxItemstarget_dealer: TStringField
+      FieldKind = fkData
+      FieldName = 'target_dealer'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object rxItemsprice: TFloatField
+      FieldKind = fkData
+      FieldName = 'price'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      Precision = 2
+    end
+    object rxItemstotal_price: TFloatField
+      FieldKind = fkData
+      FieldName = 'total_price'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      Precision = 2
+    end
+    object rxItemsstatus: TStringField
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object dsItems: TDataSource[7]
+    DataSet = rxItems
+    Left = 376
+    Top = 128
+  end
+end

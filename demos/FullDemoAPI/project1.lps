@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3"/>
+        <CursorPos X="9" Y="9"/>
+        <UsageCount Value="45"/>
+      </Unit>
+      <Unit>
+        <Filename Value="rsmtestmainunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RSMAPIMainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="rsmtestMainUnit"/>
+        <TopLine Value="154"/>
+        <CursorPos X="36" Y="181"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frames/rsmtststoreslistunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="rsmtstStoresListFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="rsmtstStoresListUnit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos Y="72"/>
+        <UsageCount Value="40"/>
+      </Unit>
+      <Unit>
+        <Filename Value="rsmtestmaindataunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainData"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="rsmtestMainDataUnit"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="32"/>
+        <CursorPos X="42" Y="48"/>
+        <UsageCount Value="40"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frames/rsmtstremainslistunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="rsmtstRemainsListFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="rsmtstRemainsListUnit"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="76"/>
+        <CursorPos Y="92"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frames/rsmtstabstractframeunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="rsmtstAbstractFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="rsmtstAbstractFrameUnit"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="14"/>
+        <UsageCount Value="36"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="rsmtstOrdersListFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="rsmtstOrdersListUnit"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="123"/>
+        <CursorPos X="73" Y="132"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/crpt_true_api/SuzIntegration/crptsuzintegration.pas"/>
+        <UnitName Value="CRPTSuzIntegration"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="110"/>
+        <CursorPos X="14" Y="120"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/crpt_true_api/crpttrueapi.pas"/>
+        <UnitName Value="CRPTTrueAPI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="43" Y="74"/>
+        <UsageCount Value="13"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/crpt_true_api/SuzIntegration/crptsuzapi.pas"/>
+        <UnitName Value="CRPTSuzAPI"/>
+        <EditorIndex Value="6"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/RSMApi/rsmapi.pas"/>
+        <UnitName Value="RSMApi"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/crpt_true_api/lazcrptregister.pas"/>
+        <UnitName Value="LazCRPTRegister"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8"/>
+        <CursorPos Y="41"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/rsm_api/lazregisterrsm.pas"/>
+        <UnitName Value="lazRegisterRSM"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <CursorPos X="4" Y="45"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/rsm_api/rsmapi.pas"/>
+        <UnitName Value="RSMApi"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="395"/>
+        <CursorPos Y="415"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-web/src/base/fphttpclient.pp"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="18" Y="16"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-net/src/sslsockets.pp"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="16" Y="16"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/rxnew/rxcontrols/rxapputils.pas"/>
+        <UnitName Value="rxAppUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="44"/>
+        <CursorPos X="27" Y="59"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/rtl/inc/astrings.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="273"/>
+        <CursorPos Y="296"/>
+        <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-json/src/fpjson.pp"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="481"/>
+        <CursorPos X="3" Y="490"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/rxnew/rxtools/rxlogging.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="30" Y="48"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/rxnew/rxdb/rxmemds.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1637"/>
+        <CursorPos X="3" Y="1646"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frames/rsmtstorderslistunit.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="330"/>
+        <CursorPos Y="351"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/protobuf-fpc/json/jsonobjects.pas"/>
+        <UnitName Value="JSONObjects"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="177"/>
+        <CursorPos X="3" Y="176"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/rtl/objpas/sysutils/datih.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="147"/>
+        <CursorPos X="10" Y="157"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/rtl/objpas/sysutils/dati.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="923"/>
+        <CursorPos X="3" Y="925"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/protobuf-fpc/xmlobject/abstractserializationobjects.pas"/>
+        <UnitName Value="AbstractSerializationObjects"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="432"/>
+        <CursorPos X="3" Y="417"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/local/share/lazarus/components/protobuf-fpc/xmlobject/xmlobject.pas"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="158"/>
+        <CursorPos Y="182"/>
+        <UsageCount Value="17"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-sdo/src/base/sdo_date_utils.pas"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="71"/>
+        <CursorPos X="12" Y="86"/>
+        <UsageCount Value="17"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/rtl/inc/systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="585"/>
+        <CursorPos X="3" Y="600"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/rtl/objpas/objpas.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="20"/>
+        <CursorPos X="8" Y="35"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-db/src/memds/memds.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="43"/>
+        <CursorPos X="3" Y="58"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-db/src/base/bufdataset.pas"/>
+        <UnitName Value="BufDataset"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="681"/>
+        <CursorPos X="41" Y="696"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/fpcsrc/packages/fcl-db/src/base/db.pas"/>
+        <UnitName Value="DB"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2485"/>
+        <CursorPos X="61" Y="2501"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/zeos/src/component/ZDatasetUtils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="864"/>
+        <CursorPos X="9" Y="879"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/zeos/src/component/ZDatasetParam.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="907"/>
+        <CursorPos X="54" Y="920"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/zeos/src/component/ZAbstractRODataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2873"/>
+        <CursorPos X="93" Y="2886"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/zeos/test/framework/ZPerformanceTestCase.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="470"/>
+        <CursorPos X="42" Y="484"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../install/source/zeos/test/performance/ZTestDatasetPerformance.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="346"/>
+        <CursorPos X="49" Y="361"/>
+        <UsageCount Value="9"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="90" Column="9" TopLine="91"/>
+      </Position>
+      <Position>
+        <Filename Value="rsmtestmaindataunit.pas"/>
+        <Caret Line="49" Column="10" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="125" Column="7" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="149" Column="66" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="164" Column="59" TopLine="138"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="169" Column="16" TopLine="143"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="132" Column="27" TopLine="121"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="92" Column="5" TopLine="76"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="132" Column="7" TopLine="117"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="146" Column="65" TopLine="124"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="132" TopLine="124"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="133" TopLine="124"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="135" TopLine="124"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="137" TopLine="87"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="90" Column="19" TopLine="107"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="93" Column="18" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="138" Column="42" TopLine="124"/>
+      </Position>
+      <Position>
+        <Filename Value="rsmtestmaindataunit.pas"/>
+        <Caret Line="65" Column="12" TopLine="50"/>
+      </Position>
+      <Position>
+        <Filename Value="rsmtestmaindataunit.pas"/>
+        <Caret Line="48" Column="42" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="133" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="134" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="136" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="138" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="139" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="140" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="141" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="142" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="143" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="144" TopLine="123"/>
+      </Position>
+      <Position>
+        <Filename Value="frames/rsmtstorderslistunit.pas"/>
+        <Caret Line="145" TopLine="123"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="/usr/local/share/lazarus/components/rsm_api/rsmapi.pas"/>
+        <Line Value="22"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="unit1.pas"/>
+        <Line Value="124"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="/usr/local/share/lazarus/components/rsm_api/rsmapi.pas"/>
+        <Line Value="301"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>
