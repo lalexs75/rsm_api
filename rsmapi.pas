@@ -112,6 +112,7 @@ procedure AddURLParam(var S:string; AParam, AValue:string); overload;
 procedure AddURLParam(var S: string; AParam:string; AValue: Integer); inline; overload;
 procedure AddURLParam(var S:string; AParam:string); overload;
 
+function rsmOrderStatusToStr(AStatus:string):string;
 implementation
 uses rxlogging, jsonparser, jsonscanner;
 
@@ -173,6 +174,20 @@ end;
 procedure AddURLParam(var S: string; AParam: string); inline;
 begin
   AddURLParam(S, AParam, '');
+end;
+
+function rsmOrderStatusToStr(AStatus: string): string;
+begin
+  case AStatus of
+    'NEW':Result:='Ожидает обработки';
+    'RESERV':Result:='Зарезервирован';
+    'TRANSIT':Result:='В транзите';
+    'DELIVERED':Result:='Готов к выдаче';
+    'REJECTED':Result:='Отменён';
+    'ISSUED':Result:='Выдан';
+  else
+    Result:='Ошибка - статус не определён ('+AStatus+')';
+  end;
 end;
 
 { TCustomRSMApi }
