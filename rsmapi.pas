@@ -113,6 +113,7 @@ procedure AddURLParam(var S: string; AParam:string; AValue: Integer); inline; ov
 procedure AddURLParam(var S:string; AParam:string); overload;
 
 function rsmOrderStatusToStr(AStatus:string):string;
+function rsmOrderClientTypeStr(AType:string):string;
 implementation
 uses rxlogging, jsonparser, jsonscanner;
 
@@ -187,6 +188,16 @@ begin
     'ISSUED':Result:='Выдан';
   else
     Result:='Ошибка - статус не определён ('+AStatus+')';
+  end;
+end;
+
+function rsmOrderClientTypeStr(AType: string): string;
+begin
+  case AType of
+    'CLIENT':Result:='Клиент';
+    'DEALER':Result:='Дилер';
+  else
+    Result:='Ошибка - тип не определён ('+AType+')';
   end;
 end;
 
