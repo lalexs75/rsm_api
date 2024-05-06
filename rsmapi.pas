@@ -112,8 +112,10 @@ procedure AddURLParam(var S:string; AParam, AValue:string); overload;
 procedure AddURLParam(var S: string; AParam:string; AValue: Integer); inline; overload;
 procedure AddURLParam(var S:string; AParam:string); overload;
 
-function rsmOrderStatusToStr(AStatus:string):string;
+function rsmOrderItemStatusToStr(AStatus:string):string;
 function rsmOrderClientTypeStr(AType:string):string;
+function rsmOrderStatusToStr(AStatus:string):string;
+function rsmOrderDeliveryTypeStr(AType:string):string;
 implementation
 uses rxlogging, jsonparser, jsonscanner;
 
@@ -177,7 +179,7 @@ begin
   AddURLParam(S, AParam, '');
 end;
 
-function rsmOrderStatusToStr(AStatus: string): string;
+function rsmOrderItemStatusToStr(AStatus: string): string;
 begin
   case AStatus of
     'NEW':Result:='Ожидает обработки';
@@ -198,6 +200,34 @@ begin
     'DEALER':Result:='Дилер';
   else
     Result:='Ошибка - тип не определён ('+AType+')';
+  end;
+end;
+
+function rsmOrderStatusToStr(AStatus: string): string;
+begin
+  case AStatus of
+    'N':Result:='В обработке';
+    'A':Result:='Принят';
+    'C':Result:='Отменен';
+    'H':Result:='Выдан частично';
+    'F':Result:='Выдан';
+    //Статусы для заявок:
+    //'N':Result:='В обработке';
+    'P':Result:='Обработан';
+    //'C':Result:='Отменен';
+    'O':Result:='Заказ';
+  else
+    Result:='Ошибка - статус не определён ('+AStatus+')';
+  end;
+end;
+
+function rsmOrderDeliveryTypeStr(AType: string): string;
+begin
+  case AType of
+    'DELIVERY':Result:='Доставка по адресу';
+    'PICKUP':Result:='Самовывоз';
+  else
+    Result:=AType;
   end;
 end;
 
