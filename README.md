@@ -1,3 +1,5 @@
+Проект закрыт. РСМ отказался от данного сеервиса
+
 # rsm_api
 FPC/Lazarus comonent for work with RSM API
 
